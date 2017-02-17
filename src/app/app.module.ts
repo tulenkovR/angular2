@@ -1,34 +1,24 @@
-import { routing } from './app.routing';
-import { LogServiceService } from './services/log-service.service';
+import { GithubService } from './service/github.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { JumbotronComponent } from './jumbotron/jumbotron.component';
-
-import { BeerHousenService } from './services/beer-housen.service';
-import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
-    JumbotronComponent,
-    HomeComponent,
-    AboutComponent
+    ProfileComponent
   ],
   imports: [
-    routing,
     BrowserModule,
     FormsModule,
     HttpModule,
     MaterialModule
   ],
-  providers: [BeerHousenService, LogServiceService],
+  providers: [GithubService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
