@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-  branding:string = 'Angular 2 One Learn';
+  branding: string = 'Angular 2 One Learn';
   constructor() { }
 
   ngOnInit() {

@@ -1,0 +1,5 @@
+<ul *ngIf="beersList" class="list-group">
+  <li *ngFor="let beer of beersList" class="list-group-item">
+    {{beer.title}} - {{beer.price}} руб.
+  </li>
+</ul>

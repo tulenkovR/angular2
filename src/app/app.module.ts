@@ -1,3 +1,5 @@
+import { routing } from './app.routing';
+import { LogServiceService } from './services/log-service.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -7,21 +9,26 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { JumbotronComponent } from './jumbotron/jumbotron.component';
 
-import {BeerHousenService} from './services/beer-housen.service';
+import { BeerHousenService } from './services/beer-housen.service';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    JumbotronComponent
+    JumbotronComponent,
+    HomeComponent,
+    AboutComponent
   ],
   imports: [
+    routing,
     BrowserModule,
     FormsModule,
     HttpModule,
     MaterialModule
   ],
-  providers: [BeerHousenService],
+  providers: [BeerHousenService, LogServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
