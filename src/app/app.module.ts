@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { JumbotronComponent } from './jumbotron/jumbotron.component';
 
+import {BeerHousenService} from './services/beer-housen.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +21,7 @@ import { JumbotronComponent } from './jumbotron/jumbotron.component';
     HttpModule,
     MaterialModule
   ],
-  providers: [],
+  providers: [BeerHousenService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
