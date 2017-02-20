@@ -18,15 +18,15 @@ export class GithubService {
   }
 
   getRepos() {
-    return this._http.get('https://api.github.com/users/' + this.username + '/repos?client_id=' + this.client_id + '&client_secret=' + this.client_secret)
+    return this._http.get('https://api.github.com/users/' + this.username + '/repos' + '?client_id=' + this.client_id + '&client_secret=' + this.client_secret)
       .map(res => res.json());
   }
 
   getFollowers() {
-    return this._http.get('https://api.github.com/users/' + this.username + '/followers?client_id=' + this.client_id + '&client_secret=' + this.client_secret)
+    return this._http.get('https://api.github.com/users/' + this.username + '/followers' + '?client_id=' + this.client_id + '&client_secret=' + this.client_secret)
       .map(res => res.json());
   }
-
+ 
   updateUsers(username: string) {
     this.username = username;
   }
