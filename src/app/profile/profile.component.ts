@@ -6,15 +6,29 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss']
 })
+
 export class ProfileComponent implements OnInit {
+  user: any;
+  repos: any[];
+  username: string;
 
   constructor(private _github: GithubService) {
-    this._github.getUser().subscribe(user => {
-        console.log(user);
-    });
+    this.user = false;
   }
 
   ngOnInit() {
+  }
+
+  searchUser() {
+    this._github.updateUsers(this.username);
+
+    this._github.getUser().subscribe(user => {
+      this.user = user;
+    });
+
+    this._github.getRepos().subscribe(repos => {
+      this.repos = repos;
+    });
   }
 
 }
