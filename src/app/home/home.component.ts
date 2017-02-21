@@ -14,6 +14,6 @@ export class HomeComponent implements OnInit {
     // this.beersList = this._service.getBeers();
   }
   ngOnInit() {
-    this.beersList = this._service.getBeers();
+    this._service.getBeers().then(beersList => this.beersList = beersList);
   }
 }
